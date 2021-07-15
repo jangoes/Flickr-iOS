@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PhotoDetailView: View {
-    
     @EnvironmentObject var viewModel: PhotosListViewModel
     
     let photo: Photo
