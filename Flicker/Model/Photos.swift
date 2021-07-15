@@ -24,7 +24,7 @@ struct Photo: Identifiable, Decodable {
     let title: String
     let owner: String
     let imageUrl: String
-    var image: Image?
+    var isFavorite: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case id, title, owner = "ownername", imageUrl = "url_m"

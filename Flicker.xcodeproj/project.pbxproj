@@ -19,6 +19,13 @@
 		7AA2970B26A021FB00EE37FE /* RequestResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2970A26A021FB00EE37FE /* RequestResources.swift */; };
 		7AA2970F26A0297400EE37FE /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2970E26A0297400EE37FE /* Photos.swift */; };
 		7AA2971226A037CD00EE37FE /* PhotosListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2971126A037CD00EE37FE /* PhotosListViewModel.swift */; };
+		7AA2971826A048FD00EE37FE /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2971426A048FD00EE37FE /* AsyncImage.swift */; };
+		7AA2971926A048FD00EE37FE /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2971526A048FD00EE37FE /* EnvironmentValues+ImageCache.swift */; };
+		7AA2971A26A048FD00EE37FE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2971626A048FD00EE37FE /* ImageCache.swift */; };
+		7AA2971B26A048FD00EE37FE /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2971726A048FD00EE37FE /* ImageLoader.swift */; };
+		7AA2971E26A0497000EE37FE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2971D26A0497000EE37FE /* File.swift */; };
+		7ACBB38826A067540018F545 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACBB38726A067540018F545 /* PhotoDetailView.swift */; };
+		7ACBB38B26A071600018F545 /* PhotosList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7ACBB38926A071600018F545 /* PhotosList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		7AA2970A26A021FB00EE37FE /* RequestResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResources.swift; sourceTree = "<group>"; };
 		7AA2970E26A0297400EE37FE /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		7AA2971126A037CD00EE37FE /* PhotosListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewModel.swift; sourceTree = "<group>"; };
+		7AA2971426A048FD00EE37FE /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		7AA2971526A048FD00EE37FE /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
+		7AA2971626A048FD00EE37FE /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		7AA2971726A048FD00EE37FE /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		7AA2971D26A0497000EE37FE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		7ACBB38726A067540018F545 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		7ACBB38A26A071600018F545 /* PhotosList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotosList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				7AA296E926A019DD00EE37FE /* HomeView.swift */,
+				7AA2971126A037CD00EE37FE /* PhotosListViewModel.swift */,
 				7AA296FF26A01D5400EE37FE /* Photos */,
 				7AA2970226A01E0C00EE37FE /* Favourites */,
+				7ACBB38F26A081240018F545 /* Common */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -101,6 +117,7 @@
 		7AA296F826A01C0800EE37FE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7ACBB38926A071600018F545 /* PhotosList.xcdatamodeld */,
 				7AA296EB26A019E000EE37FE /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -110,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				7AA296FB26A01CAB00EE37FE /* SystemImage.swift */,
+				7AA2971D26A0497000EE37FE /* File.swift */,
+				7AA2971C26A0490200EE37FE /* AsyncImage */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -118,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				7AA296F926A01C3500EE37FE /* PhotosListView.swift */,
-				7AA2971126A037CD00EE37FE /* PhotosListViewModel.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -147,6 +165,25 @@
 				7AA2970E26A0297400EE37FE /* Photos.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7AA2971C26A0490200EE37FE /* AsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				7AA2971426A048FD00EE37FE /* AsyncImage.swift */,
+				7AA2971526A048FD00EE37FE /* EnvironmentValues+ImageCache.swift */,
+				7AA2971626A048FD00EE37FE /* ImageCache.swift */,
+				7AA2971726A048FD00EE37FE /* ImageLoader.swift */,
+			);
+			path = AsyncImage;
+			sourceTree = "<group>";
+		};
+		7ACBB38F26A081240018F545 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7ACBB38726A067540018F545 /* PhotoDetailView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,15 +255,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA2971B26A048FD00EE37FE /* ImageLoader.swift in Sources */,
 				7AA2970F26A0297400EE37FE /* Photos.swift in Sources */,
+				7AA2971A26A048FD00EE37FE /* ImageCache.swift in Sources */,
 				7AA2970826A0215C00EE37FE /* NetworkRequest.swift in Sources */,
 				7AA296FC26A01CAB00EE37FE /* SystemImage.swift in Sources */,
 				7AA296EA26A019DD00EE37FE /* HomeView.swift in Sources */,
+				7AA2971926A048FD00EE37FE /* EnvironmentValues+ImageCache.swift in Sources */,
 				7AA2970626A020A800EE37FE /* APIResource.swift in Sources */,
+				7ACBB38826A067540018F545 /* PhotoDetailView.swift in Sources */,
+				7AA2971826A048FD00EE37FE /* AsyncImage.swift in Sources */,
 				7AA296E826A019DD00EE37FE /* FlickerApp.swift in Sources */,
+				7AA2971E26A0497000EE37FE /* File.swift in Sources */,
 				7AA2970B26A021FB00EE37FE /* RequestResources.swift in Sources */,
 				7AA2971226A037CD00EE37FE /* PhotosListViewModel.swift in Sources */,
 				7AA2970426A01E2800EE37FE /* FavouritesView.swift in Sources */,
+				7ACBB38B26A071600018F545 /* PhotosList.xcdatamodeld in Sources */,
 				7AA296FA26A01C3500EE37FE /* PhotosListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +460,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7ACBB38926A071600018F545 /* PhotosList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7ACBB38A26A071600018F545 /* PhotosList.xcdatamodel */,
+			);
+			currentVersion = 7ACBB38A26A071600018F545 /* PhotosList.xcdatamodel */;
+			path = PhotosList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7AA296DC26A019DD00EE37FE /* Project object */;
 }

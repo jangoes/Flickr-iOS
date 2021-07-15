@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct FavouritesView: View {
+    @EnvironmentObject var viewModel: PhotosListViewModel
+    
+    private let title = "Favourites"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(viewModel.likedPhotos) { photo in
+                    PhotoDetailView(photo: photo)
+                        .environmentObject(viewModel)
+                }
+            }
+            .navigationBarTitle(title)
+        }
     }
 }
 

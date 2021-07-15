@@ -9,14 +9,19 @@ import SwiftUI
 
 struct PhotosListView: View {
     
-    @StateObject private var viewModel = PhotosListViewModel()
+    @EnvironmentObject var viewModel: PhotosListViewModel
+    
+    private let title = "Photos"
     
     var body: some View {
         NavigationView {
-            List(viewModel.photos) { photos in
-                photos.image
+            List {
+                ForEach(viewModel.photos) { photo in
+                    PhotoDetailView(photo: photo)
+                        .environmentObject(viewModel)
+                }
             }
-            .navigationBarTitle("Photos")
+            .navigationBarTitle(title)
         }
     }
 }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject private var viewModel = PhotosListViewModel()
+    
     var body: some View {
         TabView {
             PhotosListView()
@@ -15,12 +18,14 @@ struct HomeView: View {
                     SystemImage.photo.image
                     Text("Photos")
                 }
+                .environmentObject(viewModel)
             
             FavouritesView()
                 .tabItem {
                     SystemImage.starCirle.image
                     Text("Favourites")
                 }
+                .environmentObject(viewModel)
         }
     }
 }
