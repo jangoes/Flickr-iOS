@@ -21,6 +21,7 @@ struct PhotosListView: View {
                         .environmentObject(viewModel)
                 }
             }
+            .buttonStyle(BorderlessButtonStyle())
             .navigationBarTitle(title)
         }
     }

@@ -5,7 +5,8 @@
 //  Created by John Ellie Go on 7/15/21.
 //
 
-import UIKit
+import Foundation
+import Combine
 
 protocol APIResource {
     associatedtype ModelType: Decodable
@@ -50,27 +51,6 @@ extension APIRequest: NetworkRequest {
     }
     
     func cancelTask() {
-        currentTask?.cancel()
         currentTask = nil
-    }
-}
-
-// MARK: - Image Request
-class ImageRequest {
-    let url: URL
-    var currentTask: URLSessionTask?
-    
-    init(url: URL) {
-        self.url = url
-    }
-}
- 
-extension ImageRequest: NetworkRequest {
-    func decode(_ data: Data) -> UIImage? {
-        return UIImage(data: data)
-    }
-    
-    func execute(withCompletion completion: @escaping (UIImage?) -> Void) {
-        load(url, withCompletion: completion)
     }
 }

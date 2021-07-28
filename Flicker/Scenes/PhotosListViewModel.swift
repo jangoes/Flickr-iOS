@@ -16,7 +16,6 @@ final class PhotosListViewModel: ObservableObject {
     private var likedPhotosEntity: [LikedPhotoEntity] = []
     private var cachedPhotosEntity: [CachedPhotoEntity] = []
     private var request: APIRequest<PhotosResource>?
-    private var imageRequest: ImageRequest?
     
     let container: NSPersistentContainer
     
@@ -38,9 +37,11 @@ final class PhotosListViewModel: ObservableObject {
     func fetchPhotos() {
         guard !isLoading else { return }
         isLoading = true
+        
         let resource = PhotosResource()
         let request = APIRequest(resource: resource)
         self.request = request
+        
         request.execute { [weak self] wrapper in
             if let photos = wrapper?.photos.photo {
                 self?.deleteAllCachedPhoto()

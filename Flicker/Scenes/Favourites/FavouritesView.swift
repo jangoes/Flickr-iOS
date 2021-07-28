@@ -20,6 +20,7 @@ struct FavouritesView: View {
                         .environmentObject(viewModel)
                 }
             }
+            .buttonStyle(BorderlessButtonStyle())
             .navigationBarTitle(title)
         }
     }
